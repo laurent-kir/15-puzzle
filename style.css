@@ -1,0 +1,80 @@
+@keyframes load {
+  0%, 20% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 10px;
+  font-size: 1.35vmin;
+}
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  position: relative;
+  background-color: #222;
+  user-select: none;
+  animation: load 1s;
+}
+#puzzle {
+  width: 50rem;
+  height: 50rem;
+  position: absolute;
+  left: calc(50% - 25rem);
+  top: calc(50% - 25rem);
+  background-color: #111;
+  outline: .3rem solid #777;
+  outline-offset: .1rem;
+  box-shadow: 0 0 .8rem .5rem black;
+}
+[data-id] {
+  width: 25%;
+  height: 25%;
+  display: inline-table;
+  vertical-align: top;
+  background-color: #333;
+  background-image: url("puzzle.jpg");
+  background-size: 50rem 50rem;
+  border: .1rem solid rgba(127, 127, 127, .7);
+  border-radius: .5rem;
+}
+[data-id]:after {
+  content: attr(data-id);
+  font-size: 1.6em;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: #ddd;
+  text-shadow: 0 0 .4rem black, 0 0 .4rem black;
+}
+[data-id="0"] {
+  visibility: hidden;
+}
+#arrows {
+  width: 14rem;
+  height: 7.5rem;
+  position: absolute;
+  left: calc(50% - 7rem);
+  top: calc(50% - 34rem);
+  text-align: center;
+}
+.arrow {
+  font-size: 2rem;
+  width: 1.6em;
+  height: 1.6em;
+  line-height: 1.2em;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 .4rem;
+  color: #bbb;
+  background-color: #444;
+  border-radius: .5rem;
+  box-shadow: 0 .2rem .4rem .2rem black;
+}
+.arrow:first-child {
+  display: block;
+  margin: 0 auto .8rem;
+}
